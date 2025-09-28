@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NEXTAUTH_URL = "https://agentic-ai-hub.netlify.app"
+  NEXTAUTH_SECRET = "netlify-production-secret-key-2025"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
