@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-ai-gray-50 to-ai-gray-100 min-h-screen;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+  
+  .chat-message {
+    @apply p-4 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+  
+  .user-message {
+    @apply chat-message bg-gradient-to-r from-ai-blue to-ai-purple text-white ml-12;
+  }
+  
+  .ai-message {
+    @apply chat-message bg-white border border-ai-gray-200 mr-12;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-ai-blue to-ai-purple text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-ai-gray-300 text-ai-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-ai-gray-50 hover:shadow-md;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-ai-gray-300 rounded-xl focus:ring-2 focus:ring-ai-blue/20 focus:border-ai-blue transition-all duration-300 bg-white/80 backdrop-blur-sm;
+  }
+  
+  .card {
+    @apply bg-white/90 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl p-6 transition-all duration-300 hover:shadow-2xl;
+  }
+  
+  .feature-card {
+    @apply card hover:scale-105 cursor-pointer;
+  }
+  
+  .status-dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+  
+  .status-online {
+    @apply status-dot bg-green-500 animate-pulse;
+  }
+  
+  .status-offline {
+    @apply status-dot bg-red-500;
+  }
+  
+  .typing-indicator {
+    @apply flex space-x-1;
+  }
+  
+  .typing-dot {
+    @apply w-2 h-2 bg-ai-gray-400 rounded-full animate-bounce;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-ai-blue to-ai-purple bg-clip-text text-transparent;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+  }
+}
